@@ -17,7 +17,7 @@ Please click on [Necktie](https://km-necktie-project.herokuapp.com/)
 |   `Redux`	|   Scalable state management	|   Relatively complex syntax	|
 |   `Material UI`	|   Features cover a lot of frontend use-cases. `Data-grid` is particularly useful for presenting data	|   	|
 |   `React Calendar`	|  Easy to extract selected date data 	|   Not as easy to screen out dates as `React-datetime`	| 
-|   `React-Toastify`	|  More lively notifacation than Snackbar of Material Design	|  	| 
+|   `React-Toastify`	|  Notifications are more lively than those from Snackbar of Material Design	|  	| 
 
 # 5. Design Rationale
 
@@ -39,7 +39,7 @@ Please click on [Necktie](https://km-necktie-project.herokuapp.com/)
 #### NOTE: `Cypress` can be the testing tool
 
 * Enter user name `Ink Lee`
-* At `Scheduled Bookings`, he should have got 10 Bookings (out of 37 `booking` records fetched from server side)
+* At `Scheduled Bookings`, he should have got 9 Bookings (out of 37 `booking` records fetched from server side)
 * At `New Appointments`, for example, for `Dr. Shum Chi Kin`, timeslot `2022-09-15 [12:30]` should have been disabled, since it's been booked by the client `Ink Lee` 
 * At `New Appointments`, while selecting past dates on the calendar, a red notification would pop up telling the client not to do so. 
 * For successful bookings and cancellation at `New Apppointments` & `Scheduled Bookings`, a green notification would pop up informing the client.
