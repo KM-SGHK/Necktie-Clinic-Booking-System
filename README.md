@@ -48,7 +48,7 @@ Please click on [Necktie](https://km-necktie-project.herokuapp.com/)
 
 |  Area	|   Details	|
 |---	|---	|
-|   UI/UX	|   * layout adjustment when multiple table collapsed parts are unfolded <br/> * mobile responsiveness <br/> * proper log-in mechanism should be put in place	|
+|   UI/UX	|   * layout adjustment when multiple table collapsed parts are unfolded <br/> * mobile responsiveness <br/> * proper log-in mechanism should be put in place <br/> * improve loading handling	|
 |   Logic	|   * limit the maximum number of bookings on the same doctor's schedule from the client, for the sake of fairness to other patients <br/> * non-booking-related unavailability data should be included in the api `GET/doctor` <br/> * client should be reminded in better manner on their forthcoming booking	|
 
 # 9. Run the Repo locally
