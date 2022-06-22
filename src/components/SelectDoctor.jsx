@@ -26,7 +26,6 @@ import SelectTimeSlot from "./SelectTimeSlot";
 
 export default function SelectDoctor() {
   const doctor_data = useSelector((state) => state.doctorData.doctors);
-  console.log("testing doc data, ", doctor_data);
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">

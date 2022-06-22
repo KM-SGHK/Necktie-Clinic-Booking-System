@@ -37,8 +37,7 @@ export function create_booking(booking_payload) {
         }
       );
       const confirmed_booking_data = await res.json();
-      if (res.status != 200) {
-        console.log('testing 1')
+      if (res.status !== 200) {
         toast.error("Please select another date.", {
           position: "top-center",
           autoClose: 5000,
