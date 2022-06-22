@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# 1. Deliverable
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please click on [Necktie](https://km-necktie-project.herokuapp.com/)
 
-## Available Scripts
+# 2. UI/UX Flow
 
-In the project directory, you can run:
+<img src="https://res.cloudinary.com/dpaehurgb/image/upload/v1655869514/202206-Business_Logic_Flow.drawio_ltjw22.png" alt="UI/UX Flow" style="height: 700px; width:700px; margin-bottom: 15px"/>
 
-### `npm start`
+# 3. Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img src="https://res.cloudinary.com/dpaehurgb/image/upload/v1655871224/React_Components_1_ceayu2.png" alt="UI/UX Flow" style="height: 400px; width:700px; margin-bottom: 15px"/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 4. Key Packages
 
-### `npm test`
+|   Packages	|   Pros	|   Cons	|
+|---	|---	|---	|
+|   `Redux`	|   Scalable state management	|   Relatively complex syntax	|
+|   `Material UI`	|   Features cover a lot of frontend use-cases. `Data-grid` is particularly useful for presenting data	|   	|
+|   `React Calendar`	|  Easy to extract selected date data 	|   Not as easy to screen out dates as `React-datetime`	| 
+|   `React-Toastify`	|  More lively notifacation than Snackbar of Material Design	|  	| 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 5. Design Rationale
 
-### `npm run build`
+|  Rationale	|   Note	|
+|---	|---	|
+|   Minimalism	|   Neat UI/UX Flow	|
+|   Easy to use	|   Both scheduled and new bookings UI are put on the same page, for easy tracking	| 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 6. Feature Summary
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+|   Page	|   Section	|   Feature(s)	|
+|---	|---	|---	|
+|   Landing	|   n/a	|   * easy login through entering client name	|
+|   Booking	|   New Appointments	|   * access to doctors' profile <br/> * overview doctors' locations & working days <br/> * select doctors' available timeslots for booking <br/> * past dates & booked timeslots are disabled <br/> * doctors' names are sorted in ascending alphabetical order	|
+|   Booking	|  Scheduled Bookings 	|   * overview scheduled bookings details <br/> * cancel selected booking <br/> * only confirmed bookings linked to the logged-in client are shown <br/> * bookings are sorted in ascending date order <br/> * users can manually sort all columns	| 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 7. Selected Testing Cases
 
-### `npm run eject`
+#### NOTE: `Cypress` can be the testing tool
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Enter user name `Ink Lee`
+* At `Scheduled Bookings`, he should have got 10 Bookings (out of 37 `booking` records fetched from server side)
+* At `New Appointments`, for example, for `Dr. Shum Chi Kin`, timeslot `2022-09-15 [12:30]` should have been disabled, since it's been booked by the client `Ink Lee` 
+* At `New Appointments`, while selecting past dates on the calendar, a red notification would pop up telling the client not to do so. 
+* For successful bookings and cancellation at `New Apppointments` & `Scheduled Bookings`, a green notification would pop up informing the client.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 8. Future Enhancement
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+|  Area	|   Details	|
+|---	|---	|
+|   UI/UX	|   * layout adjustment when multiple table collapsed parts are unfolded <br/> * mobile responsiveness <br/> * proper log-in mechanism should be put in place	|
+|   Logic	|   * limit the maximum number of bookings on the same doctor's schedule from the client, for the sake of fairness to other patients <br/> * non-booking-related unavailability data should be included in the api `GET/doctor` <br/> * client should be reminded in better manner on their forthcoming booking	|
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 9. Run the Repo locally
 
-## Learn More
+* `yarn install`
+* `yarn start`
+* Browse the app via `localhost:8080`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
