@@ -15,7 +15,7 @@ export const check_booked_timeslot = (date, timeslot, doctor_id, bookings) => {
     return false;
   }
   const doctor_booked_timeslots = bookings
-    .filter((booking) => booking.doctorId === doctor_id)
+    .filter((booking) => booking.doctorId === doctor_id && booking.status === "confirmed")
     .map((booking) => booking.start);
   const grouped_doctor_booking_schedule_list =
     zip_doctor_booked_timeslots_infomration(
