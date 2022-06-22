@@ -37,6 +37,19 @@ export function create_booking(booking_payload) {
         }
       );
       const confirmed_booking_data = await res.json();
+      if (res.status != 200) {
+        console.log('testing 1')
+        toast.error("Please select another date.", {
+          position: "top-center",
+          autoClose: 5000,
+          closeOnClick: true,
+          theme: "colored",
+          hideProgressBar: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       if (res.status === 200) {
         dispatch(createBooking(confirmed_booking_data));
         toast.success("Booking Confirmed!", {
